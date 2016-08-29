@@ -7,5 +7,3 @@
 
 + 1day:
 熟悉了models、admin、增加了bootstrap_admin
-+ 2day:
-增加了熟悉了templates调用，增加了base.html and home.html
