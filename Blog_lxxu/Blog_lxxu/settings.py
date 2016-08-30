@@ -17,7 +17,6 @@ from django.conf import global_settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -27,7 +26,9 @@ SECRET_KEY = 'k=jtbi+1*j-lyz)$-r*%)1tp(&e6-jn%a=yg5$l()320sbs=8y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+TEMPLATE_DEBUG = True  #True
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,7 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
-    'render',
+    'statics',
 )
 
 # add bootstrap_admin
@@ -62,7 +63,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'Blog_lxxu.urls'
 
 TEMPLATES = [
     {
@@ -79,6 +79,8 @@ TEMPLATES = [
         },
     },
 ]
+
+ROOT_URLCONF = 'Blog_lxxu.urls'
 
 WSGI_APPLICATION = 'Blog_lxxu.wsgi.application'
 
@@ -113,3 +115,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIRS = (
+    TEMPLATE_PATH,
+    )
+
+STATIC_ROOT = 'staticfiles'
+
+try:
+    from .local_setting import *
+except ImportError :
+    pass
