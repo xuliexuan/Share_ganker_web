@@ -1,9 +1,0 @@
-Python==2.7.10
-Django==1.8.6
-sudo pip install uwsgi
-pip install markdown
-pip install pygments
-
-
-uwsgi --http :8008 --chdir /home/ganker/lxxu/Web_lxxu/Blog_lxxu  --module Blog_lxxu.wsgi
-ps: --home --home=/path/to/env(使用virtualenv)
