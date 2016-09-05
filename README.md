@@ -15,3 +15,5 @@
 熟悉了templates，增加了base.html and home.html
 + 3day
 熟悉了博客页面显示效果，增加了代码高亮，标签，rss，搜索等功能
++ 4day
+增加了二维码，tab栏图标，需要熟悉代码和框架
