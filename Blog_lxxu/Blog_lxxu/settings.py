@@ -26,7 +26,7 @@ SECRET_KEY = 'k=jtbi+1*j-lyz)$-r*%)1tp(&e6-jn%a=yg5$l()320sbs=8y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True  #True
+# TEMPLATE_DEBUG = True  #True
 
 ALLOWED_HOSTS = ['*']
 
@@ -46,10 +46,10 @@ INSTALLED_APPS = (
 )
 
 # add bootstrap_admin
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'django.core.context_processors.request',
-)
-BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
+# TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+#     'django.core.context_processors.request',
+# )
+# BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 
 MIDDLEWARE_CLASSES = (
@@ -75,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
             ],
         },
     },
@@ -102,7 +103,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+USE_I18N = False   #不支持国际化False
 
 USE_L10N = True
 
@@ -117,10 +118,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
-TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
-TEMPLATE_DIRS = (
-    TEMPLATE_PATH,
-    )
+# TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+# TEMPLATE_DIRS = (
+#     TEMPLATE_PATH,
+#     )
 
 STATIC_ROOT = 'staticfiles'
 
@@ -128,3 +129,5 @@ try:
     from .local_setting import *
 except ImportError :
     pass
+
+
